@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "sprintindicator",
+  "id": "${modId}",
   "version": "${version}",
   "name": "Sprint Indicator",
-  "description": "Simple UI element showing whether you're currently sprinting.\n${library}",
+  "description": "Simple UI element showing whether you're currently sprinting.",
   "authors": [
     "Roundaround"
   ],
@@ -13,14 +13,5 @@
     "issues": "https://github.com/Roundaround/mc-fabric-sprint-indicator/issues"
   },
   "license": "MIT",
-  "icon": "assets/sprintindicator/icon.png",
-  "environment": "client",
-  "mixins": [
-    "sprintindicator.mixins.json"
-  ],
-  "depends": {
-    "fabricloader": "*",
-    "minecraft": "1.21.*",
-    "java": ">=17"
-  }
+  "environment": "client"
 }
