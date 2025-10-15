@@ -1,17 +1,42 @@
 {
   "schemaVersion": 1,
-  "id": "${modId}",
-  "version": "${version}",
-  "name": "Sprint Indicator",
-  "description": "Simple UI element showing whether you're currently sprinting.",
+  "id": "${mod_id}",
+  "version": "${mod_version}",
+  "name": "Sneak Indicator",
+  "description": "Simple UI element showing whether you're currently sneaking.",
   "authors": [
-    "Roundaround"
+    "Evarika (adaptor)",
+    "Roundaround (original)"
   ],
   "contact": {
-    "homepage": "https://modrinth.com/mod/sprint-indicator",
-    "sources": "https://github.com/Roundaround/mc-fabric-sprint-indicator",
-    "issues": "https://github.com/Roundaround/mc-fabric-sprint-indicator/issues"
+    "homepage": "https://modrinth.com/mod/sneak-indicator",
+    "sources": "https://github.com/EvarikaArkana/sneak-indicator",
+    "issues": "https://github.com/EvarikaArkana/sneak-indicator/issues"
   },
   "license": "MIT",
-  "environment": "client"
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "eva.sneakindicator.SneakIndicatorMain"
+    ],
+    "client": [
+      "eva.sneakindicator.SneakIndicatorClient"
+    ]
+  },
+  "mixins": [
+    {
+      "config": "sneakindicator.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": ">=${minecraft_version} <=${minecraft_version_1}",
+    "java": ">=21"
+  },
+  "suggests": {
+  },
+  "breaks": {
+
+  }
 }
