@@ -38,5 +38,11 @@
   "suggests": {
   },
   "breaks": {
+  },
+  "custom": {
+    "mc-publish": {
+      "modrinth": "MWQJPm5i",
+      "curseforge": 1365876
+    }
   }
 }
