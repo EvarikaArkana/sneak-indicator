@@ -17,10 +17,10 @@
   "environment": "client",
   "entrypoints": {
     "main": [
-      "eva.sneakindicator.SneakIndicatorMain"
+      "eva.sneaker.SneakIndicatorMain"
     ],
     "client": [
-      "eva.sneakindicator.SneakIndicatorClient"
+      "eva.sneaker.SneakIndicatorClient"
     ]
   },
   "mixins": [
