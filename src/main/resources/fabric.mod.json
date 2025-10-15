@@ -2,6 +2,7 @@
   "schemaVersion": 1,
   "id": "${mod_id}",
   "version": "${mod_version}",
+
   "name": "Sneak Indicator",
   "description": "Simple UI element showing whether you're currently sneaking.",
   "authors": [
@@ -42,7 +43,10 @@
   "custom": {
     "mc-publish": {
       "modrinth": "MWQJPm5i",
-      "curseforge": 1365876
+      "curseforge": 1365876a,
+      "dependencies" : [
+
+      ]
     }
   }
 }
