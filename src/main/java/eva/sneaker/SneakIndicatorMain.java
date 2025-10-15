@@ -1,4 +1,4 @@
-package eva.sneakindicator;
+package eva.sneaker;
 
 import net.fabricmc.api.ModInitializer;
 

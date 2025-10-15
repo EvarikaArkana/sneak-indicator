@@ -1,4 +1,4 @@
-package eva.sneakindicator.mixin;
+package eva.sneaker.mixin;
 
 import net.minecraft.client.DeltaTracker;
 import net.minecraft.client.gui.Gui;
@@ -17,6 +17,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
 import org.spongepowered.asm.mixin.injection.Slice;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import static eva.sneaker.SneakIndicatorClient.sprindicator;
 
 @Mixin(Gui.class)
 public abstract class GuiMixin {
@@ -40,9 +42,10 @@ public abstract class GuiMixin {
         }
         int i = guiGraphics.guiWidth() / 2;
         int n = guiGraphics.guiHeight() - 20;
-        int o = i + 91 + 6;
+        int a = sprindicator ? 24 : 0;
+        int o = i + 91 + 6 + a;
         if (player.getMainArm().getOpposite() == HumanoidArm.RIGHT) {
-            o = i - 91 - 22;
+            o = i - 91 - 22 - a;
         }
         guiGraphics.blitSprite(RenderPipelines.GUI_TEXTURED, texture, o, n, 18, 18);
     }
@@ -69,7 +72,7 @@ public abstract class GuiMixin {
             method = "renderItemHotbar",
             at = @At(
                     value = "INVOKE",
-                    target = "Lnet/minecraft/client/gui/GuiGraphics;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/ResourceLocation;IIII)V"
+                    target = "Lnet/minecraft/client/gui/GuiGraphics;blitSprite(Lcom/mojang/blaze3d/pipeline/RenderPipeline;Lnet/minecraft/resources/ResourceLocation;IIIIIIII)V"
             ),
             index = 6,
             slice = @Slice(

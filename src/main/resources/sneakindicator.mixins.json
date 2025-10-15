@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "eva.sneakindicator.mixin",
+  "package": "eva.sneaker.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [
     "GuiMixin"
