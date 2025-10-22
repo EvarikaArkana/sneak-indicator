@@ -32,9 +32,6 @@ public abstract class GuiMixin {
     @Final @Shadow
     private Minecraft minecraft;
 
-    @Unique
-    private final TextureAtlasSprite texture = this.minecraft.getMobEffectTextures().get(MobEffects.MOVEMENT_SLOWDOWN);
-
     @Inject(method = "renderItemHotbar", at = @At(value = "HEAD"))
     private void afterRenderHotbar(GuiGraphics guiGraphics, DeltaTracker deltaTracker, CallbackInfo ci) {
         Player basePlayer = this.getCameraPlayer();
@@ -52,6 +49,7 @@ public abstract class GuiMixin {
         if (player.getMainArm().getOpposite() == HumanoidArm.RIGHT) {
             o = i - 91 - 22 - a;
         }
+        TextureAtlasSprite texture = this.minecraft.getMobEffectTextures().get(MobEffects.MOVEMENT_SLOWDOWN);
         guiGraphics.blitSprite(RenderType::guiTextured, texture, o, n, 18, 18);
     }
 
